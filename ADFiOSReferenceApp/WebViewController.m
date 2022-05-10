@@ -24,7 +24,7 @@
 @property NSURL *URL;
 @end
 
-static NSString* const DEFAULT_URL = @"http://www.amazon.com";
+static NSString* const DEFAULT_URL = @"https://3firemusic.github.io/player-application/";
 static NSString* const ERROR_MESSAGE_FORMAT = @"\"%@\" is a malformed URL. Please enter a URL in the correct format. An example would be %@";
 @implementation WebViewController
 

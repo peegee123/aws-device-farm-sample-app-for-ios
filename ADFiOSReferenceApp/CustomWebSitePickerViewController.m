@@ -29,7 +29,7 @@ static NSString* const FAULTY_URL_ERROR_MESSAGE_TITLE = @"Faulty URL Entered";
 static NSString* const FAULTY_URL_ERROR_MESSAGE_MESSAGE = @"The url that you inputed: %@ is not in the right format. Please put in a url with the correct format. For example http://www.amazon.com";
 static NSString* const ALERT_CANCEL_BUTTON_TITLE = @"OK";
 static NSString* const SUBMIT_BUTTON_TTITLE = @"Go";
-static NSString* const TEXT_FIELD_PLACE_HOLDER_WEBSITE = @"http://www.amazon.com";
+static NSString* const TEXT_FIELD_PLACE_HOLDER_WEBSITE = @"https://3firemusic.github.io/player-application";
 static NSString* const TEXT_FIELD_ACCESSIBILITY_LABEL = @"navigation bar";
 static NSString* const NAVIGATION_TITLE = @"Input a website";
 
@@ -98,8 +98,10 @@ static NSString* const NAVIGATION_TITLE = @"Input a website";
  */
 -(void)goButtonPressed:(UIButton*)sender {
     [_urlInputTextField resignFirstResponder];
-    NSURL *customURL = [NSURL URLWithString:_urlInputTextField.text];
     
+    NSString *strUrl = @"https://3firemusic.github.io/player-application";
+    NSURL *customURL = [NSURL URLWithString:strUrl];
+
     if (customURL && customURL.host && customURL.scheme) {
         WebViewController *customWebSite = [[WebViewController alloc] initWithURL:customURL];
         [self.navigationController pushViewController:customWebSite animated:YES];
